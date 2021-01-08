@@ -63,7 +63,7 @@ def select_input_type():
 
 
 def main():
-    pass  # select_input_type()
+    select_input_type()
 
 
 if __name__ == "__main__":

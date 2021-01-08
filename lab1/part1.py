@@ -5,66 +5,61 @@
 ######################################################
 
 
-class Error(Exception):
-    pass
+from main import Error
 
 
 def extended_euclidean_algorithm(x, y):
-    x = str(x)
-    y = str(y)
+    if x < y and x > 1 and y > 1:
+        t = x
+        x = y
+        y = t
+    if x >= y and x > 1 and y > 1:
+        # 1
+        a1, a2 = 0, 1
+        b1, b2 = 1, 0
 
-    if x.isdigit() and y.isdigit():
-        x = int(x)
-        y = int(y)
+        # 2
+        while y != 0:
+            # 2.1
+            q = int(x/y)
+            r = x - q * y
+            a = a2 - q * a1
+            b = b2 - q * b1
 
-        if x >= y and x > 1 and y > 1:
-            # 1
-            a1, a2 = 0, 1
-            b1, b2 = 1, 0
+            # 2.2
+            x = y
+            y = r
+            a2 = a1
+            a1 = a
+            b2 = b1
+            b1 = b
 
-            # 2
-            while y != 0:
-                # 2.1
-                q = round(x/y)
-                r = x - q * y
-                a = a2 - q * a1
-                b = b2 - q * b1
+        # 3
+        m = x
+        a = a2
+        b = b2
 
-                # 2.2
-                x = y
-                y = r
-                a2 = a1
-                a1 = a
-                b2 = b1
-                b1 = b
-
-            # 3
-            m = x
-            a = a2
-            b = b2
-
-            # 4
-            return m, a, b
+        # 4
+        return m, a, b
 
     raise Error("Некорректные входные данные")
 
 
-def main(m, s):
-    m = str(m)
+def search_for_the_inverse_element_modulo(m, s):
+    if not isinstance(m, int) or not isinstance(s, int):
+        raise Error("Некорректные входные данные")
 
-    if m.isdigit():
-        m = int(m)
-
-        if m > 1:
-            print("\nss^(-1)≡1(mod m), s^(-1) = ?\n")
+    if m > 1:
+        # \nss^(-1)≡1(mod m), s^(-1) = ?
+        try:
             _, _, b = extended_euclidean_algorithm(m, s)
+        except Error as e:
+            raise Error(str(e))
 
-            print("s^(-1) =", b)
-
-            return b
+        return b  # s^(-1)
 
     raise Error("Некорректные входные данные")
 
 
 if __name__ == "__main__":
-    main(3, 2)
+    print(extended_euclidean_algorithm(7, 3))
