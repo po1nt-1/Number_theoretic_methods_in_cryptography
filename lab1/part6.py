@@ -7,7 +7,7 @@
 
 import random
 
-from main import Error
+from system import Error
 from part5 import Miller_Rabin_test
 
 

@@ -7,7 +7,7 @@
 
 import random
 
-from main import Error
+from system import Error
 from part2 import fast_exponentiation_algorithm_modulo
 
 

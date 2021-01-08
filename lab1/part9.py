@@ -5,7 +5,7 @@
 #######################################
 
 
-from main import Error
+from system import Error
 from part1 import search_for_the_inverse_element_modulo
 from part3 import NOD
 

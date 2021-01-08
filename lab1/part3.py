@@ -5,7 +5,7 @@
 #######################################
 
 
-from main import Error
+from system import Error
 
 
 def NOD(a, b):

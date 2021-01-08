@@ -5,7 +5,7 @@
 ################################################
 
 
-from main import Error
+from system import Error
 from part3 import calculate_Jacobi_symbol
 from part5 import Miller_Rabin_test
 

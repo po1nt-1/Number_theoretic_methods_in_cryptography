@@ -5,7 +5,7 @@
 ###############################################
 
 
-from main import Error
+from system import Error
 from part1 import extended_euclidean_algorithm
 from part3 import NOD
 

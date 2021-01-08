@@ -8,9 +8,9 @@
 
 import random
 
-from main import Error
+from system import Error
 from part2 import fast_exponentiation_algorithm_modulo
-from part3 import calculating_Jacobi_symbol
+from part3 import calculate_Jacobi_symbol
 
 
 def Farm_test(n):
@@ -45,7 +45,7 @@ def Soloway_Strassen_test(n):
             return "Число n составное"
         # 4
         try:
-            s = calculating_Jacobi_symbol(a, n)
+            s = calculate_Jacobi_symbol(a, n)
         except Error as e:
             raise Error(str(e))
         # 5
