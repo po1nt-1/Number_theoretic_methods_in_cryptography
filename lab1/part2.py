@@ -25,18 +25,14 @@ def fast_exponentiation_algorithm_modulo(a, s, n):
     y = a
     b_0 = int(nn[0])
     x = a ** b_0
-
     # 2
     for i, b_i in enumerate(nn):
         if i == 0:
             continue
-
         y = (y ** 2) % n
-
         # 2.1
         if int(b_i) == 1:
             x = (x * y) % n
-
     # 3
     return x
 

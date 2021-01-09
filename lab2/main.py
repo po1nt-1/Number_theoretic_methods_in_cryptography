@@ -45,7 +45,6 @@ def pollard_1(n, c):
     # 1
     a = c
     b = c
-    t = 0
     while True:
         # 2
         a = func(a, n)
@@ -55,10 +54,8 @@ def pollard_1(n, c):
         # 4
         if 1 < d and d < n:
             p = d
-            return f'Нетривиальный делитель: {t}'
-        elif d == n:
+        if d == n:
             return 'Делитель не найден'
-            t = 1
         elif d == 1:
             continue
 

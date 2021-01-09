@@ -5,6 +5,9 @@
 ######################################################
 
 
+from system import Error
+
+
 def extended_euclidean_algorithm(x, y):
     if x < y and x > 1 and y > 1:
         t = x
@@ -18,7 +21,7 @@ def extended_euclidean_algorithm(x, y):
         # 2
         while y != 0:
             # 2.1
-            q = int(x/y)
+            q = x // y
             r = x - q * y
             a = a2 - q * a1
             b = b2 - q * b1
@@ -39,7 +42,6 @@ def extended_euclidean_algorithm(x, y):
         # 4
         return m, a, b
 
-    from main import Error
     raise Error("Некорректные входные данные")
 
 
@@ -56,7 +58,6 @@ def search_for_the_inverse_element_modulo(m, s):
 
         return b  # s^(-1)
 
-    from main import Error
     raise Error("Некорректные входные данные")
 
 
