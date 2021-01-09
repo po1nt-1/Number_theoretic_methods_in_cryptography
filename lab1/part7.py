@@ -5,18 +5,14 @@
 ###############################################
 
 
-from system import Error
-from part1 import extended_euclidean_algorithm
 from part3 import NOD
 
 
 def solve_linear_congruence(a, b, m):
     # 1
     d = NOD(a, m)
-
     if b % d != 0:
         return "Решений нет"
-
     k = d
     L = m
     while b % d == 0:
@@ -25,7 +21,7 @@ def solve_linear_congruence(a, b, m):
             a //= d
             b //= d
             m //= d
-            d, _, _ = extended_euclidean_algorithm(a, m)
+            d = NOD(a, m)
         else:
             N = []
             for r in range(L):
@@ -35,7 +31,7 @@ def solve_linear_congruence(a, b, m):
                 for j in range(k):
                     pass
             break
-    return f"x≡{i+j*m} (mod {L})"
+    return f"x ≡ {i + j * m} (mod {L})"
 
 
 if __name__ == "__main__":

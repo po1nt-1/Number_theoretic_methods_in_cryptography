@@ -48,7 +48,7 @@ def search_for_the_inverse_element_modulo(m, s):
         raise Error("Некорректные входные данные")
 
     if m > 1:
-        # \nss^(-1)≡1(mod m), s^(-1) = ?
+        # s * s^(-1) ≡ 1(mod m)
         try:
             _, _, b = extended_euclidean_algorithm(m, s)
         except Error as e:

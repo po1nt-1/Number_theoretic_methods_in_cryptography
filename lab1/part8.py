@@ -62,10 +62,10 @@ def solve_quadratic_congruence(p, a, N):
             j = 1
         # 3.4
         N2 = (N2 * (N1 ** ((2 ** i) * j))) % p
-        x = f'x≡{(a1 * N2) % p} (mod {p})'
+        x = f'x ≡ {(a1 * N2) % p} (mod {p})'
         if x not in result:
             result.append(x)
-            result.append(x.replace('≡', '≡-'))
+            result.append(x.replace('≡', '≡ -'))
 
     return result
 
